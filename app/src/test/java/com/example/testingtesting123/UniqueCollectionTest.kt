@@ -24,7 +24,10 @@ class UniqueCollectionTest {
     // Uniqueness is determined by the Item.name property, which is set via the constructor
     @Test
     fun addUniqueItem() {
-
+        collection.addItem(Item("Apple"))
+        collection.addItem(Item("apple"))
+        collection.addItem(Item("APPLE"))
+        assert(collection.size() == 1) {"Duplicate items were added to the collection"}
     }
 
     // Test Driven Development (TDD) test - complete specified function so that this test passes
